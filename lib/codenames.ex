@@ -1,18 +1,5 @@
 defmodule Codenames do
-  @moduledoc """
-  Documentation for Codenames.
-  """
+  alias Codenames.Game
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Codenames.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  defdelegate new_game(board, teams), to: Game, as: :new
 end
