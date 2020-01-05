@@ -23,4 +23,10 @@ defmodule Codenames.Game do
       board: board
     }
   end
+
+  def give_clue(%__MODULE__{} = game, number_of_guesses: number_of_guesses) do
+    game
+    |> Map.put(:remaining_guesses, number_of_guesses)
+    |> Map.put(:game_state, :waiting_for_guess)
+  end
 end
